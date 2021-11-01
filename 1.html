@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Coba</title>
+</head>
+<body>
+<h1>Validasi Field</h1>
+
+<p>Username :</p>
+<input type="text"  id="username" onkeyup="cekUsername()">
+<p>Email :</p>
+<input type="email"  id="email" onkeyup="cekEmail()">
+<p>Password :</p>
+<input type="password"  id="pswd" onkeyup="cekPassword()">
+<hr/>
+<p>Saya baru belajar dari basic html css js dan menggunakan git, mungkin baru ini yang bisa saya buat.</p>
+<p>Itupun belum benar. Tapi saya mau belajar lebih dalam.</p>
+
+<p>Disini saya cuma bisa memunculkan "valid" dan "invalid" di console log berdasarkan data yang diketik di field.</p>
+<p>Sementara kalau diketik perintah function <em>cekUsername('Akusiapa')</em> masih belum benar hasilnya.</p>
+
+<script type="text/javascript">
+function cekUsername(){
+
+   pola_username=/^[a-z]{1,6}$/;
+   if (!pola_username.test(username.value)){
+      console.log("Invalid")
+   }
+   else {
+    console.log("Valid")
+   }
+return (true);
+}
+
+function cekEmail(){
+  pola_email=/^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/;
+  if (!pola_email.test(email.value)){
+    console.log("Invalid")
+  }
+
+  else {
+    console.log("Valid")
+   }
+   return (true);
+}
+
+function cekPassword() {  
+  var pw = document.getElementById("pswd").value;  
+
+pola_password=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/;
+  if (!pola_password.test(pswd.value)){
+    console.log("Invalid")
+  }
+
+  else {
+    console.log("Valid")
+   }
+   return (true);
+}
+
+</script>
+</body>
+</html>
