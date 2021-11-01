@@ -9,20 +9,22 @@
 <h1>Validasi Field</h1>
 
 <p>Username :</p>
-<input type="text"  id="username" onkeyup="cekUsername()">
+<input type="text" placeholder="contoh : ahsan"  id="username" onkeyup="cekUsername()">
 <p>Email :</p>
-<input type="email"  id="email" onkeyup="cekEmail()">
+<input type="email" placeholder="contoh : ahsan@gmail.com" id="email" onkeyup="cekEmail()">
 <p>Password :</p>
-<input type="password"  id="pswd" onkeyup="cekPassword()">
+<input type="password" placeholder="contoh" id="pswd" onkeyup="cekPassword()">
+<em>Password minimal 8 karakter, harus berisikan 1 huruf besar, 1 huruf kecil dan 1 angka.</em>
 <hr/>
 <p>Saya baru belajar dari basic html css js dan menggunakan git, mungkin baru ini yang bisa saya buat.</p>
 <p>Itupun belum benar. Tapi saya mau belajar lebih dalam.</p>
 
 <p>Disini saya cuma bisa memunculkan "valid" dan "invalid" di console log berdasarkan data yang diketik di field.</p>
-<p>Sementara kalau diketik perintah function <em>cekUsername('Akusiapa')</em> masih belum benar hasilnya.</p>
+<p>Sementara kalau diketik perintah function <em>cekUsername('Akusiapa')</em> di console masih belum benar hasilnya.</p>
 
 <script type="text/javascript">
 function cekUsername(){
+var username = document.getElementById('username');
 
    pola_username=/^[a-z]{1,6}$/;
    if (!pola_username.test(username.value)){
@@ -31,10 +33,11 @@ function cekUsername(){
    else {
     console.log("Valid")
    }
-return (true);
+return false;
 }
 
 function cekEmail(){
+  var email = document.getElementById('email');
   pola_email=/^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,6}$/;
   if (!pola_email.test(email.value)){
     console.log("Invalid")
@@ -43,7 +46,7 @@ function cekEmail(){
   else {
     console.log("Valid")
    }
-   return (true);
+   return false;
 }
 
 function cekPassword() {  
@@ -57,7 +60,7 @@ pola_password=/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([a-zA-Z0-9]{8,})$/;
   else {
     console.log("Valid")
    }
-   return (true);
+   return false;
 }
 
 </script>
